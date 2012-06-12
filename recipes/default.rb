@@ -1,11 +1,12 @@
+include_recipe "libapr"
+include_recipe "libdb"
+include_recipe "libexpat"
+include_recipe "libuuid"
+
 packages = Array.new
 
 case node[:lsb][:codename]
-when "lucid"
-  packages |= %w/
-    libaprutil1
-  /
-when "precise"
+when "lucid", "precise"
   packages |= %w/
     libaprutil1
   /
